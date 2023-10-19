@@ -10,18 +10,53 @@ package awal.Kendaran_class;
  */
 public class Kendaraan {
 
-    private String namaKendaraan;
-    private int tahunPembuatan;
-    private double kecepatanMaks;
-    private String warna;
-    private double harga;
+    public String namaKendaraan;
+    public int tahunPembuatan;
+    public double kecepatanMaks;
+    public String warna;
+    public double harga;
 
-    public Kendaraan(String namaKendaraan, int tahunPembuatan, double kecepatanMaks, String warna, double harga) {
-        this.namaKendaraan = namaKendaraan;
-        this.tahunPembuatan = tahunPembuatan;
-        this.kecepatanMaks = kecepatanMaks;
+    // Blank Constuctor
+    public Kendaraan() {
+        this.namaKendaraan = "Unknow";
+        this.tahunPembuatan = 0;
+        this.kecepatanMaks = 0.0;
+        this.warna = "Unknow";
+        this.harga = 0.0;
+    }
+
+    // Full Constructor
+    public Kendaraan(String Name, int Manufactured_Years, double Max_Velocity, String warna, double harga) {
+        this.namaKendaraan = Name;
+        this.tahunPembuatan = Manufactured_Years;
+        this.kecepatanMaks = Max_Velocity;
         this.warna = warna;
         this.harga = harga;
+    }
+
+    // Only Name
+    public Kendaraan(String namaKendaraan) {
+        this.namaKendaraan = namaKendaraan;
+    }
+
+    // Only Name and Manufactured Year
+    public Kendaraan(String namaKendaraan, int tahunPembuatan) {
+        this.namaKendaraan = namaKendaraan;
+        this.tahunPembuatan = tahunPembuatan;
+    }
+
+    // Only Name and Price
+    public Kendaraan(String Name, double Price) {
+        this.namaKendaraan = Name;
+        this.harga = Price;
+
+    }
+
+    // Only Name, ManufacturedYears, and Max_Velocity
+    public Kendaraan(String Name, int Manufactured_Years, double Max_Velocity) {
+        this.namaKendaraan = Name;
+        this.tahunPembuatan = Manufactured_Years;
+        this.kecepatanMaks = Max_Velocity;
     }
 
     public String getNamaKendaraan() {
@@ -44,5 +79,4 @@ public class Kendaraan {
         return harga;
     }
 
-    
 }
