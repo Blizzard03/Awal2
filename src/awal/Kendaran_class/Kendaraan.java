@@ -15,6 +15,11 @@ public class Kendaraan {
     public double kecepatanMaks;
     public String warna;
     public double harga;
+    private static int totalharga = 0;
+
+    public static int getTotalharga() {
+        return totalharga;
+    }
 
     // Blank Constuctor
     public Kendaraan() {
@@ -78,5 +83,9 @@ public class Kendaraan {
     public double getHarga() {
         return harga;
     }
+    
+        public static int Hitung_Harga_Penjualan(int harga){
+            return (harga); 
+        }
 
 }
