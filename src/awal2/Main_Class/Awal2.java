@@ -7,9 +7,9 @@ package awal2.Main_Class;
 import java.text.NumberFormat;
 import java.util.*;
 
-import awal.Kendaran_class.Kendaraan;
-import awal.Kendaran_class.KendaraanR2;
-import awal.Kendaran_class.KendaraanR4;
+import awal.Kendaran_class.Master.Kendaraan;
+import awal.Kendaran_class.Sub.KendaraanR2;
+import awal.Kendaran_class.Sub.KendaraanR4;
 
 /**
  *
@@ -116,8 +116,9 @@ public class Awal2 {
                                 107);
 
                 // Item 7
-                final KendaraanR4 mobil = new KendaraanR4(450, "BMW M3", 2020, 345, "Silver", 15000000000.0);
-                final KendaraanR2 motor = new KendaraanR2(125, "Honda CBR 125", 2012, 180, "Red", 28000000);
+                final KendaraanR4 mobil;
+            mobil = new KendaraanR4(450,120, "BMW M3", 2020, 345, "Silver", 15000000000.0);
+                final KendaraanR2 motor = new KendaraanR2(125,125, "Honda CBR 125", 2012, 180, "Red", 28000000);
                 /*
                  * Items Printer
                  */
@@ -243,7 +244,11 @@ public class Awal2 {
                 System.out.println("Nama: " + Kendaraan_18.getNamaKendaraan());
                 System.out.println("Tahun Pembuatan: " + Kendaraan_18.getTahunPembuatan());
                 System.out.println("Kecepatan Maksimum: " + Kendaraan_18.getKecepatanMaks() + " " + "Km/h");
-                System.out.println("**************************************");
+                System.out.println("**************************************\n");
+                System.out.println("Kendaraan 19:");
+                mobil.tampilkan();
+                 System.out.println("Kendaraan 20:");
+                 motor.tampilkan();
 
                 int[] max_v = {
                                 (int) kendaraan1.getHarga(),

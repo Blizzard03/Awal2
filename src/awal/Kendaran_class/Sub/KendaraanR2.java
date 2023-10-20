@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package awal.Kendaran_class;
+package awal.Kendaran_class.Sub;
+
+import awal.Kendaran_class.Master.Kendaraan;
 
 /**
  *
@@ -10,11 +12,16 @@ package awal.Kendaran_class;
  */
 public class KendaraanR2 extends Kendaraan {
 
-    private int CC;
+    private int CC,weight;
 
     public int getCC() {
         return CC;
     }
+
+    public int getWeight() {
+        return weight;
+    }
+    
 
     @Override
     public void tampilkan() {
@@ -27,13 +34,17 @@ public class KendaraanR2 extends Kendaraan {
                 getKecepatanMaks(),
                 getWarna(),
                 getHarga(),
-                CC);
+                CC,
+                weight);
 
     }
 
-    public KendaraanR2(int CC, String Name, int Manufactured_Years, double Max_Velocity, String warna, double harga) {
+    public KendaraanR2(int CC, int weight, String Name, int Manufactured_Years, double Max_Velocity, String warna, double harga) {
         super(Name, Manufactured_Years, Max_Velocity, warna, harga);
         this.CC = CC;
+        this.weight = weight;
     }
+
+   
 
 }
