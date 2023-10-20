@@ -5,9 +5,11 @@
 package awal2.Main_Class;
 
 import java.text.NumberFormat;
-import java.util.Locale;
+import java.util.*;
 
 import awal.Kendaran_class.Kendaraan;
+import awal.Kendaran_class.KendaraanR2;
+import awal.Kendaran_class.KendaraanR4;
 
 /**
  *
@@ -26,6 +28,7 @@ public class Awal2 {
         // Curency Formatter
         Locale Indonesia = new Locale("in", "ID");
         NumberFormat formater = NumberFormat.getCurrencyInstance(Indonesia);
+
         // Items 1 - Full Constructors
         final Kendaraan kendaraan1 = new Kendaraan(
                 "Mobil Sedan",
@@ -88,7 +91,7 @@ public class Awal2 {
         Kendaraan_12.tahunPembuatan = 2023;
         Kendaraan_12.kecepatanMaks = 118;
         Kendaraan_12.warna = "Blue White";
-        Kendaraan_12.harga = 83000000.0;
+        Kendaraan_12.harga = 830000000.0;
 
         // Item 5 - Only Name
         final Kendaraan Kendaraan_13 = new Kendaraan(
@@ -112,6 +115,9 @@ public class Awal2 {
                 2023,
                 107);
 
+        //Item 7
+        final KendaraanR4 mobil = new KendaraanR4(450, "BMW M3", 2020, 345, "Silver", 15000000000.0);
+        final KendaraanR2 motor = new KendaraanR2(125, "Honda CBR 125", 2012, 180, "Red", 28000000);
         /*
                  * Items Printer
          */
@@ -238,23 +244,35 @@ public class Awal2 {
         System.out.println("Tahun Pembuatan: " + Kendaraan_18.getTahunPembuatan());
         System.out.println("Kecepatan Maksimum: " + Kendaraan_18.getKecepatanMaks() + " " + "Km/h");
         System.out.println("**************************************");
-
-        System.out.print("Total Penghasialan : " + " " + String.valueOf(Kendaraan.Hitung_Harga_Penjualan((int) kendaraan1.getHarga()
-                + (int) kendaraan2.getHarga()
-                + (int) kendaraan3.getHarga()
-                + (int) kendaraan7.getHarga()
-                + (int) kendaraan8.getHarga()
-                + (int) kendaraan9.getHarga()
-                + (int) Kendaraan_10.getHarga()
-                + (int) Kendaraan_11.getHarga()
-                + (int) Kendaraan_12.getHarga())) + "\n");
-
+        
+        
+        int[] max_v = {
+            (int) kendaraan1.getHarga(),
+            (int) kendaraan2.getHarga(),
+            (int) kendaraan3.getHarga(),
+            (int) kendaraan7.getHarga(),
+            (int) kendaraan8.getHarga(),
+            (int) kendaraan9.getHarga(),
+            (int) Kendaraan_10.getHarga(),
+            (int) Kendaraan_11.getHarga(),
+            (int) Kendaraan_12.getHarga()
+        };
+        int max = max_v[0];
+        for (int i = 0; i < max_v.length; i++) {
+            if (max_v[i] > max) {
+                max = max_v[i];
+                
+            }
+        }
+        
+        System.out.println("Harga Tertinggi" +" "+ formater.format(Kendaraan.Hitung_Harga_Penjualan(max)));
         System.out.println("Programs End");
         System.out.println("**************************************");
         System.out.println("**************************************");
         System.out.println("This Progam Maked by WPA TEAM");
         System.out.println("**************************************");
+        mobil.tampilkan();
+        motor.tampilkan();
 
     }
-
 }

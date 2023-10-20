@@ -15,10 +15,10 @@ public class Kendaraan {
     public double kecepatanMaks;
     public String warna;
     public double harga;
-    private static int totalharga = 0;
+    private static int maxharga = 0;
 
     public static int getTotalharga() {
-        return totalharga;
+        return maxharga;
     }
 
     // Blank Constuctor
@@ -83,9 +83,13 @@ public class Kendaraan {
     public double getHarga() {
         return harga;
     }
-    
-        public static int Hitung_Harga_Penjualan(int harga){
-            return (harga); 
-        }
+
+    public static int Hitung_Harga_Penjualan(int hgr) {
+        return (hgr);
+    }
+
+    public void tampilkan() {
+        System.out.println(String.valueOf(Hitung_Harga_Penjualan(maxharga)));
+    }
 
 }
